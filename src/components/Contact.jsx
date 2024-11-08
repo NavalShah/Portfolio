@@ -33,6 +33,24 @@ const Contact = () => {
 
   return (
     <StyledContactForm>
+
+
+
+    <div className="container">
+    <div className="info-container">
+      <div class="info-item">
+        <h1>Naval Shah</h1>
+      </div>
+      <div class="info-item">
+        <h3>navalmaulikshah@gmail.com</h3>
+      </div>
+      <div class="info-item">
+        <h3>Phone: +1 (347) 732-8531</h3> 
+      </div>
+    </div>
+
+      
+      <div className="form-container">
       <form ref={form} onSubmit={sendEmail}>
         <label>Name</label>
         <input type="text" name="user_name" />
@@ -42,6 +60,8 @@ const Contact = () => {
         <textarea name="message" />
         <input type="submit" value="Send" />
       </form>
+      </div>
+      </div>
     </StyledContactForm>
   );
 };
@@ -49,8 +69,60 @@ const Contact = () => {
 export default Contact;
 
 // Styles
-const StyledContactForm = styled.div`
-  width: 400px;
+const StyledContactForm = styled.div
+`
+  background-color: #2c3e50; /* Dark blue background */
+  color: #ecf0f1; /* Light color for text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+
+/* Container Styling */
+.container {
+  display: flex;
+  width: 80%;
+  max-width: 1000px;
+  background-color: #34495e; /* Slightly lighter dark blue */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Personal Info Section */
+.info-container {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #3b4a60;
+}
+
+.info-item h1,
+.info-item h3 {
+  color: #ecf0f1;
+  margin-bottom: 15px;
+}
+
+.info-item h1 {
+  font-size: 28px;
+}
+
+.info-item h3 {
+  font-size: 20px;
+}
+
+  .form-container {
+  width: 50%;
+  padding: 40px;
+}
+
+  h1{
+    font-size: 2vw;
+  }
 
   form {
     display: flex;
@@ -100,6 +172,37 @@ const StyledContactForm = styled.div`
       border: none;
     }
   }
+
+@media (max-width: 768px) {
+  /* Stack sections vertically for mobile */
+  .container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .info-container,
+  .form-container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .info-container {
+    text-align: center;
+  }
+
+  /* Adjust font sizes on smaller screens */
+  .info-item h1 {
+    font-size: 24px;
+  }
+
+  .info-item h3 {
+    font-size: 18px;
+  }
+
+  .form-container h1 {
+    font-size: 24px;
+  }
+
 `;
 
 
