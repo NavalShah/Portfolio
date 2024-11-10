@@ -39,6 +39,7 @@ const Contact = () => {
     <div className="container">
     <div className="info-container">
       <div class="info-item">
+        <h1>Let's get in touch :)</h1>
         <h1>Naval Shah</h1>
       </div>
       <div class="info-item">
