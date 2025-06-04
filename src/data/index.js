@@ -50,7 +50,7 @@ const portfolio = [
   {
     name: "Step 1",
     description:
-      "Go to the Google Drive Link",
+      "Go to the Google Drive Link https://drive.google.com/file/d/1fp5voobGazIM8B6N9DrbpgYpoUp4unWm/view?usp=drive_link" ,
     image: oscs,
   },
   {

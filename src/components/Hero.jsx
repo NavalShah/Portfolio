@@ -8,8 +8,7 @@ const Hero = ({ scrollContainer }) => {
         <div className="flex-1 lg:mb-0">
 
           <h1 className="mb-8 text-[7vw] font-extrabold leading-none tracking-tighter" aria-label="Dextra">
-              Dextra <br />
-
+              <a href="https://drive.google.com/file/d/1fp5voobGazIM8B6N9DrbpgYpoUp4unWm/view?usp=drive_link">Dextra</a> <br />
               
           </h1>
 
