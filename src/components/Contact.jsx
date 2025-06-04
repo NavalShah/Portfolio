@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 // npm i @emailjs/browser
+// Thins is pretty cool, but I like this
 
 const Contact = () => {
   const form = useRef();
