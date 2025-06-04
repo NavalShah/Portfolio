@@ -24,6 +24,24 @@ export const navLinks = [
 ];
 
 const experiences = [
+  {
+    title: "Director of Coding",
+    company_name: "Unsway",
+    date: "April 2024 - Present",
+    details: [
+      "Led a team of developers to craft creative curriculums",
+      "Led a team to fous for programming outreach and development <span style='color: white;'>Programming</span>.",
+    ],
+  },
+  {
+    title: "Software Developer Intern",
+    company_name: "Klinn",
+    date: "Nov 2024 - Oct 2024",
+    details: [
+      "Developer for Klinn, worked on development of <span style='color: white;'> <a href='https://klinn.works/'> klinn.works<a></span>.",
+      "<span style='color: white;'>Developed innovative</span> innovative and interactive websites.",
+        ],
+  },
   // {
   //   title: "Software Engineer",
   //   company_name: "Prime 3",
@@ -48,21 +66,15 @@ const experiences = [
 
 const portfolio = [
   {
-    name: "Step 1",
+    name: "Voca",
     description:
-      "Go to the Google Drive Link https://drive.google.com/file/d/1fp5voobGazIM8B6N9DrbpgYpoUp4unWm/view?usp=drive_link" ,
+      "A Machine Learning Application that empowers people who stutter to lead better, more fluent lives",
     image: oscs,
   },
   {
-    name: "Step 2",
+    name: "Carbon Canopy",
     description:
-      "Install and Unzip the file",
-    image: devnotes,
-  },
-  {
-    name: "Step 3",
-    description:
-      "Run and take a peek!",
+      "Made during BRHacks, an app that emphasizes personal responsibility in the fight against climate change.",
     image: devnotes,
   },
 
