@@ -1,6 +1,6 @@
 # Personal portfolio
 
-[![Site preview](/public/site-preview.png)](https://mayankjain25.netlify.app)
+[![Site preview](/public/site-preview.png)](https://navalshah.vercel.app)
 
 This is my personal portfolio website to showcase some of my projects as well as my interests.
 
@@ -32,9 +32,9 @@ Once it's done start up a local server with:
 npm run dev
 ```
 
-## Deployment [![Netlify Status](https://api.netlify.com/api/v1/badges/d07f3b07-070a-41d7-bf4e-becc24e52a11/deploy-status)](https://app.netlify.com/sites/mayankjain25/deploys)
+## Deployment
 
-This site has been deployed on Netlify. You can visit it [here](https://mayankjain25.netlify.app)
+This site has been deployed on Vercel. You can visit it [here](navalshah.vercel.app)
 
 ## License
 
