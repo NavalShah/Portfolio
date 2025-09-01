@@ -14,11 +14,11 @@ const ses = new aws.SES({
   region: 'us-east-1',
 });
 
-const ORIGINS = ['https://hamishw.com', 'https://www.hamishw.com'];
+const ORIGINS = ['https://navalshah.vercel.app/', 'https://navalshah.vercel.app/'];
 const MAX_EMAIL_LENGTH = 512;
 const MAX_MESSAGE_LENGTH = 4096;
 const EMAIL = 'navalmaulikshah@gmail.com';
-const FROM_EMAIL = 'mailbot@hamishw.com';
+const FROM_EMAIL = 'navalmaulikshah@gmail.com';
 const EMAIL_PATTERN = /(.+)@(.+){2,}\.(.+){2,}/;
 
 app.use(helmet());

@@ -1,4 +1,4 @@
-service: hamish-portfolio
+service: naval-portfolio
 
 provider:
   name: aws

@@ -1,18 +1,9 @@
-import gamestackTexture2Placeholder from 'assets/gamestack-list-placeholder.jpg';
-
 import gamestackTexturePlaceholder from 'assets/gamestack-login-placeholder.jpg';
-
 import sliceTexturePlaceholder from 'assets/slice-app-placeholder.jpg';
-
 import sprTexturePlaceholder from 'assets/spr-lesson-builder-dark-placeholder.jpg';
-
 import dextra from 'assets/dextraexample.png';
 import devnotes from 'assets/devnotes.png';
-import algoVE from 'assets/algo-ve-preview.png';
 import voca from 'assets/oscs.png';
-import algoVE2 from 'assets/algoVE2.png';
-import stockDash from 'assets/stock-dashboard.png';
-import stockDash2 from 'assets/stockDash2.png';
 import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
 import { Intro } from 'layouts/Home/Intro';
@@ -30,7 +21,7 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
-  const projectFour = useRef();
+  //const projectFour = useRef();
   const details = useRef();
 
   useEffect(() => {

@@ -29,7 +29,7 @@ export const ProjectSummary = ({
   ...rest
 }) => {
   const [focused, setFocused] = useState(false);
-  const theme = useTheme();
+  //const theme = useTheme();
   const { width } = useWindowSize();
   const titleId = `${id}-title`;
   const isMobile = width <= media.tablet;

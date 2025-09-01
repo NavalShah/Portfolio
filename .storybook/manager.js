@@ -4,8 +4,8 @@ import { addons } from '@storybook/addons';
 addons.setConfig({
   theme: {
     ...themes.dark,
-    // brandImage: 'https://hamishw.com/icon.svg',
-    brandTitle: 'Mayank Jain Components',
-    brandUrl: 'https://mayankjain.cf',
+    // brandImage: 'https://name.com/icon.svg',
+    brandTitle: 'Naval Shah Components',
+    brandUrl: '',
   },
 });
