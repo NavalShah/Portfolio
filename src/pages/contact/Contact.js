@@ -166,7 +166,7 @@ export const Contact = () => {
               data-status={status}
               style={getDelay(tokens.base.durationXS)}
             >
-              I'll get back to you within a day or two, sit tight
+              I&apos;ll get back to you within a day or two, sit tight
             </Text>
             <Button
               secondary
