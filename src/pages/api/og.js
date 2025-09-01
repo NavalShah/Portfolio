@@ -94,14 +94,14 @@ export default async function handler(req) {
               >
                 <img
                   src={`${process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://your-domain.com'}/static/avatar.jpg`}
-                  alt="Mayank Jain"
+                  alt="Naval Shah"
                   width="50"
                   height="50"
                   style={{
                     borderRadius: '50%',
                   }}
                 />
-                <span style={{ fontSize: '24px' }}>Mayank Jain</span>
+                <span style={{ fontSize: '24px' }}>Naval Shah</span>
               </div>
               
               {/* Date */}

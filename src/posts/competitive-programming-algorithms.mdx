@@ -1,115 +1,360 @@
 ---
-title: Competitive Programming Algorithms Every Beginner Must Know
-abstract: Master these algorithms to kickstart your CP journey
-date: '2022-02-19'
+title: Essential USACO Algorithms Guide
+abstract: Master these core algorithms for USACO Bronze, Silver, and Gold divisions
+date: '2025-09-01'
 banner: /static/modern-react-css-banner.jpg
 featured: true
 ---
 
-If you are a coding enthusiast of any sort, you must know what competitive programming is. Competitive programming (famously abbreviated as CP) is just like any other eSport. CP is a mental sport in which you must code a problem presented to you while adhering to certain limits, also known as constraints. In a normal CP contest, you are given a number of questions that range through various difficulty levels, involving the use of various data structures, logic, and mathematics. Taking part in such contests not only increases your problem-solving skills but also increases logic building and the ability to think faster in complex problem statements.
+The USA Computing Olympiad (USACO) is one of the most prestigious programming competitions for high school students. Success in USACO requires mastery of specific algorithms and problem-solving techniques. This guide covers essential algorithms for each division level.
 
-## What's the fuss all about?
+## Bronze Division Algorithms
 
-Becoming good at competitive programming requires you to have a stronghold on data structures and algorithms, as well as on a programming language of your choice. However, in spite of the great learning curve, it is not that you will become a professional in a day. It requires a lot of practice, and knowledge of certain algorithms to become a better CPer (if that is a word).
+### Complete Search (Brute Force)
 
-Here’s a list of some of the pretty basic algorithms that you can have a look at. Do note that it is not necessarily a compulsion that you would not be able to succeed without the knowledge of these algorithms, however, in certain cases, you are required to optimize your solution to fit into the given constraints, and in that condition, these are definitely going to help you a lot.
+The foundation of USACO Bronze. Many problems can be solved by checking all possible solutions.
+
+```cpp
+// Example: Finding all pairs with sum K
+for (int i = 0; i < n; i++) {
+    for (int j = i + 1; j < n; j++) {
+        if (arr[i] + arr[j] == k) {
+            // Found a pair
+        }
+    }
+}
+```
+
+### Simulation
+
+Directly simulate the process described in the problem. Common in Bronze division.
+
+```cpp
+// Example: Simulating cow movements
+for (int time = 0; time < t; time++) {
+    for (int cow = 0; cow < n; cow++) {
+        // Update cow position based on rules
+        cows[cow].position += cows[cow].velocity;
+    }
+}
+```
+
+### Rectangle Geometry
+
+Many USACO problems involve 2D grids and rectangles.
+
+```cpp
+struct Rectangle {
+    int x1, y1, x2, y2;
+
+    int area() {
+        return (x2 - x1) * (y2 - y1);
+    }
+
+    bool intersects(Rectangle other) {
+        return !(x2 <= other.x1 || other.x2 <= x1 ||
+                 y2 <= other.y1 || other.y2 <= y1);
+    }
+};
+```
+
+## Silver Division Algorithms
 
 ### Binary Search
 
-Binary Search is one of the most optimized searching algorithms that exist currently. If a given array or a collection of numbers is sorted, then given a key value, the binary search algorithm can find a result in approximately **O(log N)** time complexity. Binary Search is based on the _Decrease and Conquer_ algorithmic paradigm, in which a particular key is compared with the middle element of the (sorted) array. If the given key is greater than the middle element, the search is continued on that part of the array which is after mid, or vice versa. This process is repeated until an element is found or not found based on the condition.
+Essential for optimization problems. Used when searching for the optimal value.
 
 ```cpp
-int binarySearch(int arr[], int l, int r, int x)
-{
-  if (r >= l) {
-    int mid = l + (r - l) / 2
-    if (arr[mid] == x)
-    return mid;
-    if (arr[mid] > x)
-    return binarySearch(arr, l, mid - 1, x);
-    return binarySearch(arr, mid + 1, r, x);
-  }
-  return -1;
-}
-```
-
-Although binary search might appear trivial at a glance, there are a variety of questions of varying difficulties that have been curated, the solution to which lies just by implementing binary search.
-
-### Binary Exponentiation
-
-Binary Exponentiation might sound intimidating to you when you hear it for the first time, however, it is not something that is so difficult. Binary exponentiation is one of the most important aspects of Number Theory (that is used a lot in CP), and many other derivations of concepts are based on it. Binary exponentiation is essentially used to calculate the exponent of two numbers, or in simpler words, to calculate a raise to the power of b. With this, you might ask, there is already a pow() function that exists in C++ (or any other programming language for that matter, depending on the syntax), why do I need to understand a whole new concept for it? Binary exponentiation follows the Divide and Conquer algorithmic paradigm.
-
-Well, it turns out, most such built-in pow() functions return a result in the double data type, and a double data type is bound to have precision errors if the number stored in it is large enough. That means, a double data type is capable of storing very large numbers (of the order 10²⁰ ~ 10 ^30 and higher), yet it is incapable of storing them correctly. As such, when you submit your code to an online judge, and if your program uses the pow() function, there is a possibility that your code might return incorrect results for large values of input involved. In such a case, you must avoid using the built-in function for this purpose.
-
-A recursive approach to binary exponentiation is as follows:
-
-```cpp
-int binary_exponentiation(int a, int b)
-{
-    if(b==0) return 1;
-    long long int value=binary_exponentiation(a,b/2);
-    if(b%2==0)
-    {
-        return value*value;
-    }
-    else
-    {
-        return a*value*value;
+// Binary search on answer
+int lo = 0, hi = 1e9;
+while (lo < hi) {
+    int mid = lo + (hi - lo) / 2;
+    if (check(mid)) {
+        hi = mid;
+    } else {
+        lo = mid + 1;
     }
 }
 ```
 
-This method avoids the precision errors that come along with floating-point data types
+### Two Pointers
 
-### Bit Manipulations
-
-Taking reference from the classical jargon — “Computers understand nothing but 0s and 1s”. Well, the 0s and 1s referred to here are the bits of any number or input. The way in which we handle (or manipulate) the bits is what can be called bit manipulation.
-
-Bit manipulations involve modifying or operating on bits of a number to obtain a desired result. Several operators like AND (&), OR ( | ), NOT ( ! ), XOR ( {'^'}), Left Shift ( {'<<' }), Right Shift ( {'>>'} ) are used to perform such bit manipulations.
-
-Do you want to see a working example?
-
-How about you are given a situation where you have to check whether a number is odd or not? The basic approach that you would apply would be
+Efficiently process arrays with two indices moving in coordination.
 
 ```cpp
-if(n%2 ! = 0) print(“ODD”);
+// Example: Finding subarray with sum K
+int left = 0, sum = 0;
+for (int right = 0; right < n; right++) {
+    sum += arr[right];
+    while (sum > k && left <= right) {
+        sum -= arr[left];
+        left++;
+    }
+    if (sum == k) {
+        // Found subarray [left, right]
+    }
+}
 ```
 
-(where n = the number in concern)
+### Prefix Sums
 
-With the help of bit manipulation, this code can also be written as:
+Compute range sums in O(1) time after O(n) preprocessing.
 
 ```cpp
-if(n&1) print(“ODD”);
+// Build prefix sum array
+vector<long long> prefix(n + 1);
+for (int i = 0; i < n; i++) {
+    prefix[i + 1] = prefix[i] + arr[i];
+}
+
+// Query sum from index i to j (inclusive)
+long long rangeSum = prefix[j + 1] - prefix[i];
 ```
 
-Basically, this would check whether the rightmost bit of the number is 1 or not. If that is the case, then the number is odd. Performing this operation using bit manipulation is much faster than the traditional approach.
+### Graph Algorithms (DFS/BFS)
 
-### Sieve of Eratosthenes
-
-Sieve of Eratosthenes is essentially an algorithm that gives us all prime numbers up to a given number N in the most optimized way possible.
-
-It does so by iteratively marking as composite (i.e., not prime) the multiples of each prime, starting with the first prime number, 2. The multiples of a given prime are generated as a sequence of numbers starting from that prime, with a constant difference between them that is equal to that prime. This is the sieve’s key distinction from using trial division to sequentially test each candidate number for divisibility by each prime. Once all the multiples of each discovered prime have been marked as composites, the remaining unmarked numbers are primes.
+Essential for connected component and path-finding problems.
 
 ```cpp
-void SieveOfEratosthenes(int n)
-{
-    bool prime[n + 1];
-    memset(prime, true, sizeof(prime));
-    for (int p = 2; p * p <= n; p++)
-    {
-        if (prime[p] == true)
-        {
-             for (int i = p * p; i <= n; i += p)
-                 prime[i] = false;
+// DFS example
+void dfs(int node, vector<vector<int>>& adj, vector<bool>& visited) {
+    visited[node] = true;
+    for (int neighbor : adj[node]) {
+        if (!visited[neighbor]) {
+            dfs(neighbor, adj, visited);
         }
+    }
 }
-for (int p = 2; p <= n; p++)
-if (prime[p])
-cout << p << " ";
+
+// BFS example
+void bfs(int start, vector<vector<int>>& adj) {
+    queue<int> q;
+    vector<bool> visited(n, false);
+    q.push(start);
+    visited[start] = true;
+
+    while (!q.empty()) {
+        int node = q.front();
+        q.pop();
+
+        for (int neighbor : adj[node]) {
+            if (!visited[neighbor]) {
+                visited[neighbor] = true;
+                q.push(neighbor);
+            }
+        }
+    }
 }
 ```
 
-These are a few algorithms that you can research more about if you are about to enter the world of competitive programming. Do remember that there are other algorithms too, the knowledge of which you can gain as you proceed further in your journey.
+### Greedy Algorithms
 
-Competitive programming is a sport, and no sport is mastered in a single day. It requires constant effort and consistency throughout. Some people might find it difficult to cope with it, some might not, but as goes with every sport, sheer practice is the only way out! The progress here will be gradual, and you might face failure once or multiple times. Sometimes, you won’t be able to code a proper solution, and would not be even able to understand what the official solution even means to convey — but this is how you develop your problem-solving ability in order to become a better CPer in the time to come.
+Make locally optimal choices to find global optimum.
+
+```cpp
+// Classic example: Activity selection
+sort(activities.begin(), activities.end(), [](auto& a, auto& b) {
+    return a.end < b.end;  // Sort by ending time
+});
+
+int count = 0, lastEnd = -1;
+for (auto& activity : activities) {
+    if (activity.start >= lastEnd) {
+        count++;
+        lastEnd = activity.end;
+    }
+}
+```
+
+## Gold Division Algorithms
+
+### Dynamic Programming
+
+The most important technique for Gold division.
+
+```cpp
+// Classic DP: 0/1 Knapsack
+vector<vector<int>> dp(n + 1, vector<int>(W + 1, 0));
+for (int i = 1; i <= n; i++) {
+    for (int w = 0; w <= W; w++) {
+        dp[i][w] = dp[i-1][w];  // Don't take item i
+        if (w >= weight[i]) {
+            dp[i][w] = max(dp[i][w], dp[i-1][w-weight[i]] + value[i]);
+        }
+    }
+}
+```
+
+### Dijkstra's Algorithm
+
+Single-source shortest path in weighted graphs.
+
+```cpp
+vector<int> dijkstra(int start, vector<vector<pair<int, int>>>& adj) {
+    vector<int> dist(n, INT_MAX);
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+
+    dist[start] = 0;
+    pq.push({0, start});
+
+    while (!pq.empty()) {
+        auto [d, u] = pq.top();
+        pq.pop();
+
+        if (d > dist[u]) continue;
+
+        for (auto [v, w] : adj[u]) {
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    return dist;
+}
+```
+
+### Union-Find (Disjoint Set Union)
+
+Efficiently manage disjoint sets and connected components.
+
+```cpp
+class DSU {
+    vector<int> parent, rank;
+public:
+    DSU(int n) : parent(n), rank(n, 0) {
+        iota(parent.begin(), parent.end(), 0);
+    }
+
+    int find(int x) {
+        if (parent[x] != x) {
+            parent[x] = find(parent[x]);  // Path compression
+        }
+        return parent[x];
+    }
+
+    bool unite(int x, int y) {
+        int px = find(x), py = find(y);
+        if (px == py) return false;
+
+        if (rank[px] < rank[py]) swap(px, py);
+        parent[py] = px;
+        if (rank[px] == rank[py]) rank[px]++;
+        return true;
+    }
+};
+```
+
+### Minimum Spanning Tree (Kruskal's)
+
+Find the minimum cost to connect all nodes.
+
+```cpp
+struct Edge {
+    int u, v, weight;
+    bool operator<(const Edge& other) const {
+        return weight < other.weight;
+    }
+};
+
+int kruskal(vector<Edge>& edges, int n) {
+    sort(edges.begin(), edges.end());
+    DSU dsu(n);
+    int mst_weight = 0;
+
+    for (auto& edge : edges) {
+        if (dsu.unite(edge.u, edge.v)) {
+            mst_weight += edge.weight;
+        }
+    }
+
+    return mst_weight;
+}
+```
+
+### Segment Trees
+
+Efficient range queries and updates in O(log n).
+
+```cpp
+class SegmentTree {
+    vector<long long> tree;
+    int n;
+
+    void build(vector<int>& arr, int node, int start, int end) {
+        if (start == end) {
+            tree[node] = arr[start];
+        } else {
+            int mid = (start + end) / 2;
+            build(arr, 2*node, start, mid);
+            build(arr, 2*node+1, mid+1, end);
+            tree[node] = tree[2*node] + tree[2*node+1];
+        }
+    }
+
+    void update(int node, int start, int end, int idx, int val) {
+        if (start == end) {
+            tree[node] = val;
+        } else {
+            int mid = (start + end) / 2;
+            if (idx <= mid) {
+                update(2*node, start, mid, idx, val);
+            } else {
+                update(2*node+1, mid+1, end, idx, val);
+            }
+            tree[node] = tree[2*node] + tree[2*node+1];
+        }
+    }
+
+    long long query(int node, int start, int end, int l, int r) {
+        if (r < start || end < l) return 0;
+        if (l <= start && end <= r) return tree[node];
+
+        int mid = (start + end) / 2;
+        return query(2*node, start, mid, l, r) +
+               query(2*node+1, mid+1, end, l, r);
+    }
+
+public:
+    SegmentTree(vector<int>& arr) : n(arr.size()) {
+        tree.resize(4 * n);
+        build(arr, 1, 0, n-1);
+    }
+
+    void update(int idx, int val) {
+        update(1, 0, n-1, idx, val);
+    }
+
+    long long query(int l, int r) {
+        return query(1, 0, n-1, l, r);
+    }
+};
+```
+
+## Tips for USACO Success
+
+1. **Start with Bronze**: Even if you know advanced algorithms, USACO Bronze teaches problem-solving thinking.
+
+2. **Practice Systematically**: Solve problems in order of difficulty. Use the USACO training pages.
+
+3. **Time Management**: In contests, read all problems first. Start with the easiest.
+
+4. **Edge Cases**: USACO loves edge cases. Always consider:
+
+   - Empty inputs
+   - Single element
+   - All elements the same
+   - Maximum constraints
+
+5. **Debugging Strategy**:
+
+   - Test with sample inputs
+   - Create your own small test cases
+   - Check array bounds and integer overflow
+
+6. **Common Mistakes to Avoid**:
+   - Using float/double when integers suffice
+   - Not using long long for large numbers
+   - Off-by-one errors in loops
+   - Forgetting to reset global variables

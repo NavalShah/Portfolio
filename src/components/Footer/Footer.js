@@ -10,8 +10,7 @@ export const Footer = ({ className }) => (
       {/* <Image src={ReactLogo} width={40} height={40} alt="Next JS logo"></Image>{' '} */}
       <span style={{ fontFamily: 'JetBrains Mono, monospace' }}>Next.JS</span>
       <span style={{ marginRight: '10px', marginLeft: '10px' }}>and </span>
-      <span style={{ fontFamily: 'Roboto-Mono', fontWeight: 'bold' }}>three.js</span>,
-      inspired by Hamish Williams.
+      <span style={{ fontFamily: 'JetBrains Mono, monospace' }}>three.js</span>,
     </Text>
   </footer>
 );

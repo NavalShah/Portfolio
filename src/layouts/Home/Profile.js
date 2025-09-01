@@ -12,7 +12,7 @@ import { Transition } from 'components/Transition';
 import { Fragment, useState } from 'react';
 import { media } from 'utils/style';
 import styles from './Profile.module.css';
-import myImage from 'assets/mayank.jpg';
+import myImage from 'assets/navalshahjpg.jpg';
 
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
@@ -20,25 +20,17 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I&apos;m Mayank, currently enrolled at{' '}
-      <Link href="https://kiit.ac.in">KIIT University</Link> to pursue an engineering
-      degree in Information Technology. My area of expertise in web development is the
-      MERN stack. As a self-taught developer, I&apos;m constantly searching for ways to
-      improve. I pick things up quickly, and I&apos;m constantly eager to learn something
-      new. I work well in teams and am constantly willing to lend a hand. In addition to
-      this, I am a <b>Content Writer/Marketer</b> as well.
+      I&apos;m Naval, a senior South Brunswick High School. My area of expertise in web
+      development is the MERN stack. As a developer, I&apos;m constantly eager to learn
+      something new. <b>Check out my projects</b>
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I am a member of the{' '}
-      <Link href="https://msckiit.tech">
-        Microsoft Learn Student Ambassadors, KIIT Chapter
-      </Link>{' '}
-      as a{' '}
-      <span style={{ fontWeight: 'bold' }}>Creative Lead and Operations Executive</span>{' '}
-      and <span style={{ fontWeight: 'bold' }}>Senior Executive</span> at the{' '}
+      I am currently at <Link href="https://www.flexspeak.com/">Flexspeak</Link> as a{' '}
+      <span style={{ fontWeight: 'bold' }}>Software Development Intern</span>{' '}
+      {/* and <span style={{ fontWeight: 'bold' }}></span> at the{' '}
       <Link href="https://ecell.org.in">KIIT Entrepreneurship Cell</Link>. I&apos;ve
       helped organised several events having a cumulative footfall of more than 3000+
-      people, and have the experience of managing a team of 100+ members as well.
+      people, and have the experience of managing a team of 100+ members as well. */}
     </Text>
   </Fragment>
 );
