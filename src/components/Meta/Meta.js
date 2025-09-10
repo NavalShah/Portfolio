@@ -3,7 +3,7 @@ import Head from 'next/head';
 const siteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL;
 const name = 'Naval Shah';
 const twitterHandle = '@TBD';
-const defaultOgImage = `https://i.postimg.cc/DwK1GXqN/site-preview.png`;
+const defaultOgImage = `site-preview.png`;
 
 export const Meta = ({ title, description, prefix = name, ogImage = defaultOgImage }) => {
   const titleText = [prefix, title].filter(Boolean).join(' | ');
