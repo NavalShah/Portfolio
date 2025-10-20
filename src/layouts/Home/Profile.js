@@ -26,7 +26,7 @@ const ProfileText = ({ visible, titleId }) => (
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
       I am currently at <Link href="https://www.flexspeak.com/">Flexspeak</Link> as a{' '}
-      <span style={{ fontWeight: 'bold' }}>Software Development Intern</span>{' '}
+      <span style={{ fontWeight: 'bold' }}>Junior Full Stack Software Developer</span>{' '}
       {/* and <span style={{ fontWeight: 'bold' }}></span> at the{' '}
       <Link href="https://ecell.org.in">KIIT Entrepreneurship Cell</Link>. I&apos;ve
       helped organised several events having a cumulative footfall of more than 3000+
