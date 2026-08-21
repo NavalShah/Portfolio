@@ -29,9 +29,9 @@ export const socialLinks = [
     icon: 'github',
   },
   {
-    label: 'Resume',
-    url: 'https://docs.google.com/document/d/1Iz5ICF-lMF_5sEVgrNqbQU3U77FptcJ40MpIFjJisOM/edit?usp=sharing',
-    icon: 'link',
+    label: 'Instagram',
+    url: 'https://www.instagram.com/naval_shah_29/',
+    icon: 'instagram',
   },
   {
     label: 'Linkedin',

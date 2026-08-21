@@ -20,13 +20,17 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I&apos;m Naval, a freshman at Rutgers University. My area of expertise in web
+      I&apos;m Naval, a junior at Rutgers University. My area of expertise in web
       development is the MERN stack. As a developer, I&apos;m constantly eager to learn
       something new. <b>Check out my projects</b>
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I am currently at <Link href="https://www.flexspeak.com/">Flexspeak</Link> as a{' '}
-      <span style={{ fontWeight: 'bold' }}>Junior Full Stack Software Developer</span>{' '}
+      I am currently at{' '}
+      <Link href="https://www.flexspeak.com/">
+        Students for Ethical Use of Technology
+      </Link>{' '}
+      as a{' '}
+      <span style={{ fontWeight: 'bold' }}>Software Engineering Intern and AI Lead</span>{' '}
       {/* and <span style={{ fontWeight: 'bold' }}></span> at the{' '}
       <Link href="https://ecell.org.in">KIIT Entrepreneurship Cell</Link>. I&apos;ve
       helped organised several events having a cumulative footfall of more than 3000+

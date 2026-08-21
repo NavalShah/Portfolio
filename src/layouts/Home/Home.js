@@ -125,10 +125,10 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Carbon Canopy"
-        description="Made during BRHacks, an app that emphasizes personal responsibility in the fight against climate change"
+        title="Atlas Quant"
+        description="A modular quantitative research platform for loading, caching, validating, and analyzing market data."
         buttonText="View Repository"
-        buttonLink="https://github.com/NavalShah/Carbon-Canopy"
+        buttonLink="https://github.com/NavalShah/Atlas"
         model={{
           type: 'laptop',
           alt: 'Visual description of the pipeline workflow',

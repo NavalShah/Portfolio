@@ -17,6 +17,7 @@ import Send from './svg/send.svg';
 import Twitter from './svg/twitter.svg';
 import Linkedin from './svg/linkedin.svg';
 import Leetcode from './svg/leetcode.svg';
+import Instagram from './svg/instagram.svg';
 
 export const icons = {
   arrowLeft: ArrowLeft,
@@ -36,6 +37,7 @@ export const icons = {
   twitter: Twitter,
   linkedin: Linkedin,
   leetcode: Leetcode,
+  instagram: Instagram,
 };
 
 export const Icon = ({ icon, className, ...rest }) => {
