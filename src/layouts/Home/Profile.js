@@ -26,10 +26,8 @@ const ProfileText = ({ visible, titleId }) => (
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
       I am currently at{' '}
-      <Link href="https://www.flexspeak.com/">
-        Students for Ethical Use of Technology
-      </Link>{' '}
-      as a{' '}
+      <Link href="https://www.seut.net/">Students for Ethical Use of Technology</Link> as
+      a{' '}
       <span style={{ fontWeight: 'bold' }}>Software Engineering Intern and AI Lead</span>{' '}
       {/* and <span style={{ fontWeight: 'bold' }}></span> at the{' '}
       <Link href="https://ecell.org.in">KIIT Entrepreneurship Cell</Link>. I&apos;ve
