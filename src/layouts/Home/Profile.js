@@ -20,8 +20,7 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I&apos;m Naval, a junior at Rutgers University. My area of expertise in web
-      development is the MERN stack. As a developer, I&apos;m constantly eager to learn
+      I&apos;m Naval, a student at Rutgers University. As a developer, I&apos;m constantly eager to learn
       something new. <b>Check out my projects</b>
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
