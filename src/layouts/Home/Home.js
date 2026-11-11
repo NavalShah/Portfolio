@@ -1,10 +1,9 @@
 import gamestackTexturePlaceholder from 'assets/gamestack-login-placeholder.jpg';
 import sliceTexturePlaceholder from 'assets/slice-app-placeholder.jpg';
-import sprTexturePlaceholder from 'assets/spr-lesson-builder-dark-placeholder.jpg';
-import dextra from 'assets/dextraexample.png';
 import devnotes from 'assets/devnotes.png';
 import voca from 'assets/oscs.png';
 import orin from 'assets/orin.jpeg';
+import f1FrontWing from 'assets/f1-front-wing.png';
 import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
 import { Intro } from 'layouts/Home/Intro';
@@ -26,7 +25,14 @@ export const Home = () => {
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, details, projectOne, projectTwo, projectThree, projectFour];
+    const sections = [
+      intro,
+      details,
+      projectOne,
+      projectTwo,
+      projectThree,
+      projectFour,
+    ];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -84,6 +90,23 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
+        title="F1 Front Wing Optimization"
+        description="Physics-informed neural networks for predicting Formula 1 front-wing aerodynamics. Trained on SimScale CFD data with a physics-based loss, achieving R² scores of 0.968 for drag and 0.981 for lift."
+        buttonText="Read Paper"
+        buttonLink="https://arxiv.org/abs/2509.01963"
+        secondaryButtonText="View on GitHub"
+        secondaryButtonLink="https://github.com/NavalShah/F1-Front-Wing-Physics-Informed-NN"
+        model={{
+          type: 'laptop',
+          alt: 'CFD airflow simulation around a Formula 1 car from the research paper',
+          textures: [{ srcSet: [f1FrontWing], placeholder: f1FrontWing }],
+        }}
+      />
+      <ProjectSummary
+        id="project-2"
+        sectionRef={projectTwo}
+        visible={visibleSections.includes(projectTwo.current)}
+        index={2}
         title="Orin"
         description="First Place, Gemini Track at HackRU 2026. Orin turns audio and note inputs into a format-neutral musical representation, then brings alignment, studio editing, and music generation together with signal processing, ElevenLabs, and Gemini agents."
         buttonText="Visit Orin"
@@ -94,26 +117,6 @@ export const Home = () => {
           type: 'laptop',
           alt: 'Orin music creation and analysis project preview',
           textures: [{ srcSet: [orin, orin], placeholder: orin }],
-        }}
-      />
-      <ProjectSummary
-        id="project-2"
-        sectionRef={projectTwo}
-        visible={visibleSections.includes(projectTwo.current)}
-        index={2}
-        title="Dextra"
-        description="A Mediapipe based ML App to track Joint Movement and Deterioration"
-        buttonText="View Repository"
-        buttonLink="https://github.com/NavalShah/Dextra"
-        model={{
-          type: 'laptop',
-          alt: 'Displaying the home page of the website.',
-          textures: [
-            {
-              srcSet: [dextra, dextra],
-              placeholder: sprTexturePlaceholder,
-            },
-          ],
         }}
       />
       <ProjectSummary
