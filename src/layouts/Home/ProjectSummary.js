@@ -13,7 +13,9 @@ import { useState } from 'react';
 import { media } from 'utils/style';
 import styles from './ProjectSummary.module.css';
 
-const Model = dynamic(() => import('components/Model').then(mod => mod.Model));
+const Model = dynamic(() => import('components/Model').then(mod => mod.Model), {
+  ssr: false,
+});
 
 export const ProjectSummary = ({
   id,
@@ -25,6 +27,8 @@ export const ProjectSummary = ({
   model,
   buttonText,
   buttonLink,
+  secondaryButtonText,
+  secondaryButtonLink,
   alternate,
   ...rest
 }) => {
@@ -83,6 +87,11 @@ export const ProjectSummary = ({
         <Button iconHoverShift href={buttonLink} iconEnd="arrowRight">
           {buttonText}
         </Button>
+        {secondaryButtonText && secondaryButtonLink && (
+          <Button iconHoverShift href={secondaryButtonLink} iconEnd="arrowRight">
+            {secondaryButtonText}
+          </Button>
+        )}
       </div>
     </div>
   );

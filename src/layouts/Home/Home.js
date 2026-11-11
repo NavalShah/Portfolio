@@ -4,6 +4,7 @@ import sprTexturePlaceholder from 'assets/spr-lesson-builder-dark-placeholder.jp
 import dextra from 'assets/dextraexample.png';
 import devnotes from 'assets/devnotes.png';
 import voca from 'assets/oscs.png';
+import orin from 'assets/orin.jpeg';
 import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
 import { Intro } from 'layouts/Home/Intro';
@@ -21,17 +22,11 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
-  //const projectFour = useRef();
+  const projectFour = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [
-      intro,
-      projectOne,
-      projectTwo,
-      projectThree,
-      /*projectFour,*/ details,
-    ];
+    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -84,6 +79,23 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
+        title="Orin"
+        description="First Place, Gemini Track at HackRU 2026. Orin turns audio and note inputs into a format-neutral musical representation, then brings alignment, studio editing, and music generation together with signal processing, ElevenLabs, and Gemini agents."
+        buttonText="Visit Orin"
+        buttonLink="https://orinmusic.vercel.app/"
+        secondaryButtonText="View on GitHub"
+        secondaryButtonLink="https://github.com/NavalShah/Orin"
+        model={{
+          type: 'laptop',
+          alt: 'Orin music creation and analysis project preview',
+          textures: [{ srcSet: [orin, orin], placeholder: orin }],
+        }}
+      />
+      <ProjectSummary
+        id="project-2"
+        sectionRef={projectTwo}
+        visible={visibleSections.includes(projectTwo.current)}
+        index={2}
         title="Dextra"
         description="A Mediapipe based ML App to track Joint Movement and Deterioration"
         buttonText="View Repository"
@@ -100,11 +112,11 @@ export const Home = () => {
         }}
       />
       <ProjectSummary
-        id="project-2"
+        id="project-3"
         // alternate
-        sectionRef={projectTwo}
-        visible={visibleSections.includes(projectTwo.current)}
-        index={2}
+        sectionRef={projectThree}
+        visible={visibleSections.includes(projectThree.current)}
+        index={3}
         title="Voca"
         description="A machine learning powered text editor designed to empower people who stutter to lead better, more fluent lives."
         buttonText="Visit repository"
@@ -121,10 +133,10 @@ export const Home = () => {
         }}
       />
       <ProjectSummary
-        id="project-3"
-        sectionRef={projectThree}
-        visible={visibleSections.includes(projectThree.current)}
-        index={3}
+        id="project-4"
+        sectionRef={projectFour}
+        visible={visibleSections.includes(projectFour.current)}
+        index={4}
         title="Atlas Quant"
         description="A modular quantitative research platform for loading, caching, validating, and analyzing market data."
         buttonText="View Repository"
