@@ -53,6 +53,7 @@
     "three-stdlib": "^2.18.1"
   },
   "scripts": {
+    "postinstall": "node scripts/patch-next-jwt.js",
     "dev": "next dev",
     "build": "next build ",
     "build:storybook": "build-storybook -o build-storybook && node scripts/draco-storybook",
