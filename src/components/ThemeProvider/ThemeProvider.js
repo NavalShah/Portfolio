@@ -29,7 +29,11 @@ export const ThemeProvider = ({
   // Save root theme id to localstorage and apply class to body
   useEffect(() => {
     if (isRootProvider && hasMounted) {
-      window.localStorage.setItem('theme', JSON.stringify(themeId));
+      try {
+        window.localStorage.setItem('theme', JSON.stringify(themeId));
+      } catch {
+        // Applying a theme should still work when storage is blocked.
+      }
       document.body.dataset.theme = themeId;
     }
   }, [themeId, isRootProvider, hasMounted]);

@@ -14,8 +14,9 @@ import { Fragment, useEffect, useState } from 'react';
 import { cssProps } from 'utils/style';
 import styles from './Intro.module.css';
 
-const DisplacementSphere = dynamic(() =>
-  import('layouts/Home/DisplacementSphere').then(mod => mod.DisplacementSphere)
+const DisplacementSphere = dynamic(
+  () => import('layouts/Home/DisplacementSphere').then(mod => mod.DisplacementSphere),
+  { ssr: false }
 );
 
 export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) {
@@ -81,7 +82,7 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
                   </span>
                   <span className={styles.line} data-status={status} />
                 </span>
-                <div className={styles.row} component="span">
+                <span className={styles.row}>
                   <AnimatePresence>
                     {disciplines.map(item => (
                       <Transition
@@ -104,7 +105,7 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
                       </Transition>
                     ))}
                   </AnimatePresence>
-                </div>
+                </span>
               </Heading>
             </header>
             <RouterLink href="/#project-1">

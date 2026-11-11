@@ -23,8 +23,12 @@ export default function Document() {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              const initialTheme = JSON.parse(localStorage.getItem('theme'));
-              document.body.dataset.theme = initialTheme || 'dark';
+              try {
+                const initialTheme = JSON.parse(localStorage.getItem('theme'));
+                document.body.dataset.theme = initialTheme === 'light' ? 'light' : 'dark';
+              } catch {
+                document.body.dataset.theme = 'dark';
+              }
             `,
           }}
         />

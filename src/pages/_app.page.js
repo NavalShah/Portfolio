@@ -54,7 +54,7 @@ const App = ({ Component, pageProps }) => {
   }, []);
 
   useEffect(() => {
-    dispatch({ type: 'setTheme', value: storedTheme || 'dark' });
+    dispatch({ type: 'setTheme', value: storedTheme === 'light' ? 'light' : 'dark' });
   }, [storedTheme]);
 
   return (
